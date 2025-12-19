@@ -1,0 +1,103 @@
+<form #signupForm="ngForm" (ngSubmit)="signup()" novalidate>
+  <h2>Sign up</h2>
+  <br>
+
+  <!-- Username Field -->
+  <input
+    type="text"
+    [(ngModel)]="username"
+    name="username"
+    placeholder="Username"
+    required
+    minlength="3"
+    #usernameInput="ngModel"
+  />
+  <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error-message">
+    <div *ngIf="usernameInput.errors?.['required']">Username is required.</div>
+    <div *ngIf="usernameInput.errors?.['minlength']">
+      Username must be at least 3 characters long.
+    </div>
+  </div>
+
+  <!-- Mobile Number Field -->
+  <input
+    type="text"
+    [(ngModel)]="mobilenumber"
+    name="mobilenumber"
+    placeholder="Mobile Number"
+    required
+    pattern="[0-9]{10}"
+    #mobileInput="ngModel"
+  />
+  <div *ngIf="mobileInput.invalid && mobileInput.touched" class="error-message">
+    <div *ngIf="mobileInput.errors?.['required']">Mobile Number is required.</div>
+    <div *ngIf="mobileInput.errors?.['pattern']">Mobile Number must be 10 digits.</div>
+  </div>
+
+  <!-- Address Field -->
+  <input
+    type="text"
+    [(ngModel)]="address"
+    name="address"
+    placeholder="Address"
+    required
+    #addressInput="ngModel"
+  />
+  <div *ngIf="addressInput.invalid && addressInput.touched" class="error-message">
+    Address is required.
+  </div>
+
+  <!-- Pincode Field -->
+  <input
+    type="text"
+    [(ngModel)]="pincode"
+    name="pincode"
+    placeholder="Pincode"
+    required
+    pattern="[0-9]{6}"
+    #pincodeInput="ngModel"
+  />
+  <div *ngIf="pincodeInput.invalid && pincodeInput.touched" class="error-message">
+    <div *ngIf="pincodeInput.errors?.['required']">Pincode is required.</div>
+    <div *ngIf="pincodeInput.errors?.['pattern']">Pincode must be 6 digits.</div>
+  </div>
+
+  <!-- Email Field -->
+  <input
+    type="email"
+    [(ngModel)]="email"
+    name="email"
+    placeholder="Email"
+    required
+    email
+    #emailInput="ngModel"
+  />
+  <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+    <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+    <div *ngIf="emailInput.errors?.['email']">Invalid email format.</div>
+  </div>
+
+  <!-- Password Field -->
+  <input
+    type="password"
+    [(ngModel)]="password"
+    name="password"
+    placeholder="Password"
+    required
+    minlength="6"
+    #passwordInput="ngModel"
+  />
+  <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+    <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+    <div *ngIf="passwordInput.errors?.['minlength']">
+      Password must be at least 6 characters long.
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+</form>
+
+<!-- Display Success or Error Message -->
+<div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>

@@ -1,0 +1,51 @@
+<form (ngSubmit)="login()" #loginForm="ngForm" class="login-container">
+  <h2>Login</h2>
+  
+  <!-- Email Input -->
+  <div>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Email"
+      required
+      #emailInput="ngModel"
+    />
+    <!-- Validation Error for Email -->
+    <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+      <span *ngIf="emailInput.errors?.['required']">Email is required.</span>
+      <span *ngIf="emailInput.errors?.['email']">Enter a valid email address.</span>
+    </div>
+  </div>
+
+  <!-- Password Input -->
+  <div>
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Password"
+      required
+      minlength="6"
+      #passwordInput="ngModel"
+    />
+    <!-- Validation Error for Password -->
+    <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error-message">
+      <span *ngIf="passwordInput.errors?.['required']">Password is required.</span>
+      <span *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</span>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<!-- Success Notification -->
+<div *ngIf="successMessage" class="notification success">
+  {{ successMessage }}
+</div>
+
+<!-- Error Notification -->
+<div *ngIf="errorMessage" class="notification error">
+  {{ errorMessage }}
+</div>

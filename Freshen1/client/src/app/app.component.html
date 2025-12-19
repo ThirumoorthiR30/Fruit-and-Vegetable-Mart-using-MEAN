@@ -1,0 +1,23 @@
+<nav class="navbar" *ngIf="showLayout">
+  <div class="navbar-logo">
+    <img src="assets/logo.png" alt="My App Logo" />
+  </div>
+  <ul class="navbar-links">
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/fruits" routerLinkActive="active">Fruits</a></li>
+    <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+    <li><a routerLink="/vegetable" routerLinkActive="active">Vegetables</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <!-- Show Profile and Logout buttons if the user is logged in -->
+    <button *ngIf="isLoggedIn()" class="btn btn-profile" (click)="goToProfile()">Profile</button>
+    <button *ngIf="isLoggedIn()" class="btn btn-logout" (click)="logout()">Logout</button>
+
+    <!-- Show Login and Signup buttons if the user is not logged in -->
+    <button *ngIf="!isLoggedIn()" class="btn btn-login" (click)="login()">Login</button>
+    <button *ngIf="!isLoggedIn()" class="btn btn-signup" (click)="signup()">Sign Up</button>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,135 @@
+/* General Vegetable List Container */
+.fruit-list {
+  padding: 20px;
+  max-width: 1200px; /* Adjust this depending on how wide you want the product list */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;  /* Allows the items to wrap when they overflow */
+  justify-content: space-between; /* Distributes items evenly */
+  background-color: white;
+}
+
+/* Heading for Vegetable List */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Individual Vegetable Item */
+.fruit-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(20% - 20px); /* Ensure 5 items fit per row */
+  box-sizing: border-box;
+}
+
+/* Hover Effect on Vegetable Item */
+.fruit-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Vegetable Image */
+.fruit-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Vegetable Name */
+.fruit-item h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Vegetable Description */
+.fruit-item p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Price */
+.fruit-item p:nth-child(4) {
+  font-size: 18px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* Available Quantity with custom color */
+.fruit-item p:nth-child(5) {
+  font-size: 16px;
+  color: rgb(187, 35, 35); /* Red color for availability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .fruit-list h1 {
+    font-size: 28px;
+  }
+
+  /* Vegetable Item container style on smaller screens */
+  .fruit-item {
+    padding: 15px;
+    width: calc(33.33% - 20px); /* Three items per row */
+  }
+
+  .fruit-item h2 {
+    font-size: 20px;
+  }
+
+  .fruit-item p {
+    font-size: 14px;
+  }
+
+  .fruit-image {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust Vegetable Item container style for mobile screens */
+  .fruit-item {
+    width: 100%; /* One item per row */
+    margin-bottom: 15px;
+  }
+
+  .fruit-list {
+    padding: 10px;
+  }
+
+  .fruit-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #218838;
+}

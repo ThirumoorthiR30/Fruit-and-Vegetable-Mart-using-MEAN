@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  form .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 15px;
+  }
+  
+  form .success {
+    color: green;
+    font-size: 1rem;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    form {
+      padding: 1.5rem;
+      width: 90%;
+    }
+  }
+
+  /* General Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0078d7; /* Primary color */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo Section */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .navbar-logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Navbar Links */
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    display: inline-block;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    color: #ffdd57; /* Accent color for hover and active links */
+  }
+  
+  /* Navbar Actions (Buttons) */
+  .navbar-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Login Button */
+  .btn-login {
+    background-color: white;
+    color: #0078d7;
+  }
+  
+  .btn-login:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Sign Up Button */
+  .btn-signup {
+    background-color: #ffdd57;
+    color: #333;
+  }
+  
+  .btn-signup:hover {
+    background-color: #ffcc00;
+  }
+  
+  /* Button Interaction */
+  .btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .navbar-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

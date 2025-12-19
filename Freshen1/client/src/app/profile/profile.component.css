@@ -1,0 +1,136 @@
+/* General Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the profile page */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  /* Main heading */
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+  
+  /* Profile Section */
+  .profile-details {
+    background: linear-gradient(145deg, #6f7a91, #434f67);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-details h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .profile-details p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .profile-details p strong {
+    color: #ffc107;
+  }
+  
+  /* Purchase History Section */
+  .purchase-history {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .purchase-history:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .purchase-history h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .purchase-history ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .purchase-history li {
+    background: #fafafa;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .purchase-history li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .purchase-history li p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .purchase-history li p strong {
+    color: #333;
+  }
+  
+  .purchase-history li p span {
+    color: #007bff;
+  }
+  
+  /* No Purchases Message */
+  .no-purchases {
+    color: #555;
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-details, .purchase-history {
+      padding: 20px;
+    }
+  
+    .profile-details h3, .purchase-history h3 {
+      font-size: 24px;
+    }
+  
+    .purchase-history li {
+      padding: 15px;
+    }
+  }
+  

@@ -1,0 +1,44 @@
+<div class="container">
+  <h1 class="heading">Our Exclusive Product Collection</h1>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      (input)="filterProducts()" 
+      placeholder="Search products by name..." 
+      class="search-input"
+    />
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <!-- No Products Available -->
+  <div *ngIf="filteredProducts.length === 0 && !error">
+    <p>No products available.</p>
+  </div>
+  <div *ngIf="notification.message" [class]="notification.type" class="notification">
+    {{ notification.message }}
+  </div>
+  
+  <!-- Product List -->
+  <div class="product-list">
+    <div *ngFor="let product of filteredProducts" class="product-card">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p>Price: {{ product.price | currency: 'INR'}}/kg</p> 
+      <p>Type: {{ product.type }}</p>
+      
+      <p>{{ product.description }}</p>
+      <button [disabled]="product.Quantity === 0" (click)='addToCart(product)' class="btn btn-primary out-of-stock-btn">
+      <span [ngClass]="{'out-of-stock': product.Quantity === 0}">
+        {{ product.Quantity > 0 ? 'Add to Cart' : 'Add to cart (Out of Stock)' }}
+      </span>
+      </button>
+    </div>
+  </div>
+</div>

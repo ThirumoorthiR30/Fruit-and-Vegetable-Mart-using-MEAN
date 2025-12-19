@@ -1,0 +1,35 @@
+<div class="admin-container">
+  <h2>Admin Dashboard</h2>
+  <button (click)="logout()">Logout</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.type }}</td>
+        <td>{{ product.Quantity }}</td>
+        <td>
+          <!-- Two-way data binding for quantity input -->
+          <input 
+            type="number" 
+            [(ngModel)]="product.updatedQuantity" 
+            placeholder="Enter new quantity" 
+            [value]="product.updatedQuantity || product.Quantity" 
+          />
+          <button (click)="updateQuantity(product)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

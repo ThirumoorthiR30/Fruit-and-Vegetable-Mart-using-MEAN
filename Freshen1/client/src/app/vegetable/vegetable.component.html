@@ -1,0 +1,14 @@
+<h1>Vegetables</h1>
+<div class="vegetable-list">
+    <div *ngFor="let vegetable of vegetables" class="vegetable-item">
+      <img [src]="vegetable.image" alt="{{ vegetable.name }}" class="vegetable-image" />
+      <h2>{{ vegetable.name | titlecase }}</h2>
+      <p>{{ vegetable.description }}</p>
+      <p>Price: {{ vegetable.price | currency :'INR'}}</p>
+      
+      <button (click)="addToCart(vegetable)" class="btn btn-primary">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  

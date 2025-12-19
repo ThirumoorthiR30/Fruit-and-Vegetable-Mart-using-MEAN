@@ -1,0 +1,120 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  font-size: 50px;
+}
+
+/* Admin Container */
+.admin-container {
+  max-width: auto;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.admin-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Logout Button */
+button {
+  padding: 10px 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #e74c3c;
+  color: #fff;
+  float: right;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #3b4752;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+td input {
+  width: 100px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #ea4f20;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #711e03;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  td input {
+    width: 80px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

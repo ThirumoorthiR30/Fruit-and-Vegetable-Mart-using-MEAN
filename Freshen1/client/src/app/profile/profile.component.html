@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Welcome {{un}}</h1>
+  
+    <!-- Profile Details Section -->
+    <div class="profile-details">
+      <h3>Personal Info..</h3>
+      <p><strong>Username:</strong> {{ un }}</p>
+      <p><strong>Mobile Number:</strong> {{ num }}</p>
+      <p><strong>Address:</strong> {{ add }}</p>
+      <p><strong>Pincode:</strong> {{ pc }}</p>
+    </div>
+  
+    <!-- Purchase History Section -->
+    <div *ngIf="purchases.length > 0; else noPurchases" class="purchase-history">
+      <h3>Your Purchase History</h3>
+      <ul>
+        <li *ngFor="let purchase of purchases">
+          <p><strong>Product Name:</strong> {{ purchase.productName }}</p>
+          <p><strong>Price:</strong> ₹{{ purchase.productPrice }}</p>
+          <p><strong>Quantity:</strong> {{ purchase.quantity }}</p>
+          <p><strong>Total Price:</strong> ₹{{ purchase.totalPrice }}</p>
+          <p><strong>Purchased At:</strong> {{ purchase.purchasedAt | date }}</p>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- No Purchases Message -->
+    <ng-template #noPurchases>
+      <p class="no-purchases">No purchases found.</p>
+    </ng-template>
+  </div>
+  
